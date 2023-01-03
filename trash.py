@@ -36,3 +36,10 @@ def add(file):
     else:
         file.in_trash = True
         Trash.content.append(file)
+
+@staticmethod
+def clear():
+    print('Очищаем корзину')
+    for _ in range(len(Trash.content)):
+        Trash.content.pop(0).remove()
+    print('Корзина пуста')
