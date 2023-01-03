@@ -25,3 +25,14 @@ class File:
             print(f'ErrorWriteFileTrashed({self.name})')
         else:
             print(f'Записали значение {content} в файл {self.name}')
+
+class Trash:
+    content = []
+
+@staticmethod
+def add(file):
+    if file.__class__ != File:
+        print('В корзину добавлять можно только файл')
+    else:
+        file.in_trash = True
+        Trash.content.append(file)
