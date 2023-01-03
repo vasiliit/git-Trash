@@ -43,3 +43,10 @@ def clear():
     for _ in range(len(Trash.content)):
         Trash.content.pop(0).remove()
     print('Корзина пуста')
+
+@staticmethod
+def restore():
+    print('Восстанавливаем файлы из корзины')
+    for _ in range(len(Trash.content)):
+        Trash.content.pop(0).restore_from_trash()
+    print('Корзина пуста')
